@@ -1,0 +1,30 @@
+
+
+<div class='large-8 large-centered'>
+
+	<div class='callout'>
+		<%= form_for :article, url: articles_path do |f| %>
+			<p>
+				<%= f.label :title %><br>
+				<%=f.text_field :title%> 
+			</p>
+
+			<p>
+				<%= f.label :body %><br>
+				<%= f.text_area :body %>
+			</p>
+
+			<p>
+				<%= f.label :author %><br>
+				<%= f.text_field :author %>
+			</p>
+
+			<p>
+				<%= f.submit %>
+			</p>
+
+		<% end %>
+	</div>
+
+
+</div>
