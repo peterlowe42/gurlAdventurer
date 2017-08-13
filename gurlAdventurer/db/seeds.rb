@@ -8,7 +8,7 @@
 
 20.times do
 	Article.create({title:Faker::Hipster.sentence, 
-										body:Faker::Hipster.paragraphs(3),
+										body:"#{Faker::Hipster.paragraphs(20)}<br><br>#{Faker::Hipster.paragraphs(25)}<br><br>#{Faker::Hipster.paragraphs(15)}",
 										author:Faker::Hobbit.character,
 										image: File.new("/home/pete/Pictures/tempImgs/#{rand(1..12)}.jpg")})
 end
