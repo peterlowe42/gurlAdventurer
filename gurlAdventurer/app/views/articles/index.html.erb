@@ -7,7 +7,12 @@
 
 			<% @articles.each do |article| %>
 
-				<div class="column column-block index-box"><%= image_tag article.image.url(:medium) %></div>
+				<div class="column column-block index-box">
+					<%= image_tag article.image.url(:medium) %>
+					<div class="title-box">
+						<%= article.title %>
+					</div>
+				</div>
 
 			<% end %>
 
