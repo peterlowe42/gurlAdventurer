@@ -14,6 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
+//= require foundation
 $(document).foundation();
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+
+	$(".nav-btn").click(function(e) {
+		e.preventDefault()
+	})
+
+})

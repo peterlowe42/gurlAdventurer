@@ -12,8 +12,12 @@
  *
  *= require_tree .
  *= require_self
+//= require foundation_and_overrides
+
 `
  */
+
+@import 'foundation';
 
 @font-face{
 	font-family: 'goldfinger';
@@ -66,10 +70,24 @@ section.top-bar-section {
 	background-color: $primary-color !important;
 	font-weight: bold;
 	padding: 1rem 1rem !important;
-	color:white;
+	color:white !important;
 	@include transition(background-color, 1.5s);
 	&:hover {
 		background-color: darken($primary-color, 10%) !important;
 		color:white;
 	}
+}
+
+
+.container {
+  @include grid-row;
+}
+
+#main-content {
+	padding-top: 20px; 
+}
+
+.index-box {
+	display:flex;
+	justify-content: center;
 }
