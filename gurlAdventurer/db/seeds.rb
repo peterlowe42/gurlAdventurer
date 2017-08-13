@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+20.times do
+	Article.create({title:Faker::Hipster.sentence, 
+										body:Faker::Hipster.paragraphs(3),
+										author:Faker::Hobbit.character,
+										image: File.new("/home/pete/Pictures/tempImgs/#{rand(1..12)}.jpg")})
+end
