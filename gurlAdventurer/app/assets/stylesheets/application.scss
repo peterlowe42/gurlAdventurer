@@ -15,5 +15,51 @@
  *= require foundation_and_overrides
  *= require foundation
  */
- 
+@font-face{
+	font-family: 'goldfinger';
+	src:font-url('goldfinger.ttf') format('truetype');
+}
 
+@font-face{
+	font-family: 'Southern';
+	src:font-url('Southern.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'Elegant';
+	src:font-url('Elegant.ttf') format('truetype');
+}
+
+$primary-color: #b48ddb;
+
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+#title-banner {
+	text-align: center;
+	font-family: 'Southern';
+	font-size: 5rem;
+	background-color: fade-out($primary-color, 0.8);
+}
+
+nav.top-bar {
+	text-align:center;
+	background-color: $primary-color;
+}
+
+section.top-bar-section {
+	display: inline-block;
+}
+
+.nav-btn {
+	background-color: $primary-color !important;
+	font-weight: bold;
+	@include transition(background-color, 1.5s);
+	&:hover {
+		background-color: darken($primary-color, 10%) !important;
+	}
+}

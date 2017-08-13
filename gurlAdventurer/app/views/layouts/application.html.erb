@@ -12,7 +12,10 @@
   </head>
 
   <body>
-    <h2>Welcome to GurlAdventurer<h2>
+    <section id="title-banner">
+      Gurl Adventures
+    </section>
+    <%= render "layouts/navigation" %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
