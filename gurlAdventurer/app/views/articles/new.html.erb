@@ -3,10 +3,15 @@
 <div class='large-8 large-centered'>
 
 	<div class='callout'>
-		<%= form_for :article, url: articles_path do |f| %>
+		<%= form_for :article, url: articles_path, html: { multipart: true } do |f| %>
 			<p>
 				<%= f.label :title %><br>
 				<%=f.text_field :title%> 
+			</p>
+
+			<p>
+				<%= f.label :image %><br>
+				<%=f.file_field :image%> 
 			</p>
 
 			<p>
