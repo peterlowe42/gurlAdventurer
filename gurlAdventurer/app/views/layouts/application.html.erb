@@ -16,7 +16,9 @@
       Gurl Advenures
     </div>
     <%= render "layouts/navigation" %>
-    <%= yield %>
+    <div class="row" id="main-container">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
