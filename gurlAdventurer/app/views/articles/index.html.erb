@@ -8,10 +8,12 @@
 			<% @articles.each do |article| %>
 
 				<div class="column column-block index-box">
-					<%= image_tag article.image.url(:medium) %>
-					<div class="title-box">
-						<%= article.title %>
-					</div>
+					<%= link_to article do %>
+						<%= image_tag article.image.url(:medium) %>
+						<div class="title-box">
+							<%= article.title %>
+						</div>
+					<% end %>
 				</div>
 
 			<% end %>
