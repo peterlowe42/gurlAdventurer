@@ -21,6 +21,7 @@
 
 $primary-color: #B48DDB;
 $secondary-color:#80B229;
+$dark-grey: #444;
 
 @font-face{
 	font-family: 'goldfinger';
@@ -43,6 +44,11 @@ $secondary-color:#80B229;
   -o-transition:      $transition;
   -webkit-transition: $transition;
     transition:         $transition;
+}
+
+@mixin flex-centered {
+	display:flex;
+	justify-content:center; 
 }
 
 #title-banner {
@@ -114,4 +120,18 @@ section.top-bar-section {
 	font-size:13px;
 	padding-left:3px;
 	margin-bottom:5px;
+}
+
+.image-box {
+	@include flex-centered;
+}
+
+.article-info {
+	display:flex;
+	color:$dark-grey;
+	font-size: 12px;
+}
+
+.article-date {
+	padding-left: 5px;
 }

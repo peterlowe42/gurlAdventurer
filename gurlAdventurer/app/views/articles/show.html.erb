@@ -1,10 +1,21 @@
-<h4><%= @article.title %></h4>
+<div class="row">
+
+<div class="small-12 medium-9 columns" id="article-div">
+	<h1 class="article-title"><%= @article.title %></h1>
+	<div class="article-info">
+		<div class="article-author">
+			<span class="">By </span>
+			<span class="author-name"><%= @article.author %></span>
+		</div>
+		<div class="article-date">
+			- <%= @article.created_at.strftime("%a, %d %b %Y") %>
+		</div>
+	</div>
+	<div class="image-box">
+		<%= image_tag @article.image.url(:large) %>
+	</div>
+	<div class="article-body">
+		<%= simple_format(@article.body)  %>
+	</div>
+</div>
 	
-	<%= image_tag @article.image.url(:large) %>
-
-	<%= simple_format(@article.body)  %>
-
-
-<p>
-	<%= @article.author %>
-</p>
