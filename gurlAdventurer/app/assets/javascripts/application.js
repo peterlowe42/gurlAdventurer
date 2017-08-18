@@ -16,6 +16,7 @@
 //= require_tree .
 //= require foundation
 //= require sticky_kit
+//= require jquery.dotdotdot.min
 
 $(document).foundation();
 $(function(){ $(document).foundation(); });
@@ -26,6 +27,8 @@ $(document).ready(function(){
 		e.preventDefault()
 	})
 
+  $("#preview-text").dotdotdot({
+  });
 		var $window = $(window),
        $stickyCol = $('#sticky-col');
        colTop = $stickyCol.offset().top;
@@ -35,4 +38,6 @@ $(document).ready(function(){
         	$stickyCol.stick_in_parent();
         }
     });
+
+
 })

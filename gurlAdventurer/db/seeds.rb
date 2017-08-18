@@ -14,5 +14,8 @@ tags = ["Scuba", "Travel", "Kayaking", "Outdoors", "Hiking", "Sailing", "Extream
 										body:"#{Faker::Hipster.paragraph(20)}<br><br>#{Faker::Hipster.paragraph(20)}<br><br>#{Faker::Hipster.paragraph(15)}",
 										author:Faker::Hobbit.character,
 										image: File.new("/home/pete/Pictures/tempImgs/#{rand(1..12)}.jpg"),
-										tag_list: tags_list})
+										tag_list: tags_list
+										})
 end
+
+Article.first.update(featured: true)
