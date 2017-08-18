@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
-		
+		@related_articles = @article.find_related_tags[0,3]
 	end
 
 	def new
@@ -33,6 +33,6 @@ class ArticlesController < ApplicationController
 	private
 
 		def params_article
-			params.require(:article).permit(:title, :body, :author, :image)
+			params.require(:article).permit(:title, :body, :author, :image, :tag_list)
 		end
 end

@@ -96,42 +96,6 @@ section.top-bar-section {
 	padding-top: 20px; 
 }
 
-.index-box {
-	position: relative;
-	display:flex;
-	justify-content: center;
-}
-
-.title-box {
-	position:absolute;
-	max-width: 80%;
-  background:fade-out($secondary-color, 0.3);
-  bottom:0%;
-  left:0.9375rem;
-  padding: 5px;
-  font-size:1.1rem;
-  color:white;
-  text-shadow: 1px 1px darken($secondary-color, 20%)
-}
-
-.grey-tab {
-	background: #dad4d4;
-	width:104px;
-	font-size:13px;
-	padding-left:3px;
-	margin-bottom:5px;
-}
-
-.image-box {
-	@include flex-centered;
-}
-
-.article-info {
-	display:flex;
-	color:$dark-grey;
-	font-size: 12px;
-}
-
-.article-date {
-	padding-left: 5px;
+#sticky-col {
+	padding-top: 10px;
 }

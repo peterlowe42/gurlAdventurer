@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require_tree .
 //= require foundation
+//= require sticky_kit
+
 $(document).foundation();
 $(function(){ $(document).foundation(); });
 
@@ -24,4 +26,13 @@ $(document).ready(function(){
 		e.preventDefault()
 	})
 
+		var $window = $(window),
+       $stickyCol = $('#sticky-col');
+       colTop = $stickyCol.offset().top;
+
+   $window.scroll(function() {
+        if ($window.scrollTop() > colTop) {
+        	$stickyCol.stick_in_parent();
+        }
+    });
 })
