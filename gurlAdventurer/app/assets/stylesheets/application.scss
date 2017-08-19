@@ -106,3 +106,10 @@ section.top-bar-section {
 #sticky-col {
 	padding-top: 10px;
 }
+
+.header-divider {
+	font-size: 1.3rem;
+	width:100%;
+	border-bottom: 1px solid $dark-grey;
+	margin-bottom: 15px;
+}
