@@ -30,7 +30,7 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'acts-as-taggable-on', '~> 4.0'
 
-
+gem 'devise'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
