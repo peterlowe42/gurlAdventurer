@@ -4,16 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Gurl Adventures" %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <h2>Welcome to GurlAdventurer<h2>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <div id='title-banner'>
+      Gurl Adventures
+    </div>
+
+    <%= render "layouts/navigation"%>
+
+    <div class="container" id="main-content">
+      <%= yield %>
+    </div>
+    
+
   </body>
 </html>

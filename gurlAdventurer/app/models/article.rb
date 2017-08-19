@@ -1,4 +1,7 @@
 class Article < ActiveRecord::Base
-	has_attached_file :image, styles: {large: "600x600>", medium: "300x300>", thumb: "150x112#" }, default_url: "/images/:style/missing.png"
+	acts_as_taggable
+	has_many :comments, as: :commentable 
+
+	has_attached_file :image, styles: {large: "900x675#", medium: "300x225#", thumb: "150x112#" }, default_url: "/images/:style/missing.png"
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end
