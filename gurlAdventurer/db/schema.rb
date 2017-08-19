@@ -28,11 +28,10 @@ ActiveRecord::Schema.define(version: 20170818182617) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "bodt"
+    t.text     "body"
     t.integer  "user_id"
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.boolean  "reply"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
