@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818182617) do
+ActiveRecord::Schema.define(version: 20170819161821) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -28,11 +28,10 @@ ActiveRecord::Schema.define(version: 20170818182617) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "bodt"
+    t.text     "body"
     t.integer  "user_id"
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.boolean  "reply"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -83,9 +82,11 @@ ActiveRecord::Schema.define(version: 20170818182617) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end

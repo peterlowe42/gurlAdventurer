@@ -19,9 +19,12 @@
 
 @import 'foundation';
 
+@import 'foundation-icons';
+
 $primary-color: #B48DDB;
 $secondary-color:#80B229;
 $dark-grey: #444;
+$light-grey: #8f8f8f;
 
 @font-face{
 	font-family: 'goldfinger';
@@ -68,6 +71,9 @@ nav.top-bar {
 	background-color: $primary-color;
 	padding:0;
 	box-shadow: 0px 5px 10px #dad4d4;
+	&.right {
+		justify-content: right;
+	}
 }
 
 section.top-bar-section {
@@ -85,8 +91,11 @@ section.top-bar-section {
 		background-color: darken($primary-color, 10%) !important;
 		color:white;
 	}
-}
 
+	&.small {
+		padding: 0.5rem 0.5rem !important;
+	}
+}
 
 .container {
   @include grid-row;
@@ -98,4 +107,33 @@ section.top-bar-section {
 
 #sticky-col {
 	padding-top: 10px;
+}
+
+.pad-left {
+	padding-left:10px
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.small-grey {
+	font-size: 0.8rem;
+	color: $light-grey;
+}
+
+.header-divider {
+	font-size: 1.3rem;
+	width:100%;
+	border-bottom: 1px solid $dark-grey;
+	margin-bottom: 15px;
+}
+
+.comment-box {
+	margin: 10px 0px 10px 50px;
+	color: $dark-grey;
+}
+
+.avatar-small {
+	border-radius: 50%;
 }
