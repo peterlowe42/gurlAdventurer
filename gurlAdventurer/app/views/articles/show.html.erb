@@ -1,4 +1,4 @@
-<disv class="row">
+<div class="row">
 
 <div class="small-12 medium-9 columns" id="article-div">
 	<h1 class="article-title"><%= @article.title %></h1>
@@ -24,20 +24,28 @@
 	<div id="comment-container">
 		<% @comments.each do |comment| %>
 				<% user = User.find(comment.user_id)%>
-			<div class='comment-box'>
-				<div class="comment-body">		
-					<%= comment.body %>
-				</div>
-				<div class="comment-info">
-					<span>user.username</span>
-					<span>comment.created_at.strftime("%a, %d %b %Y")</span>
+			<div class='comment-box row'>
+
+				<div class='small-1 columns'>
+					<%= image_tag 'Blank_Avatar', class:'avatar-small' %>
 				</div>
 
+				<div class="small-11 columns">
+					<div class="row collapse">
+						<span class='bold'><%= user.username %></span>
+						<span class='pad-left small-grey'><%= comment.created_at.strftime("%a, %d %b %Y")%></span>
+					</div>
+					<div class="row collapse">
+					  <%= comment.body %>
+					</div>	
+				</div>
 			</div>
 		<% end %>
 
 	</div>
-			
+	<div class='rowcollapse'>
+		<%= render 'comments/form' %>	  
+	</div>			
 </div>
 
 
@@ -60,5 +68,5 @@
 </div>
 </div>
 
-<%= render 'comments/form' %>
+
 

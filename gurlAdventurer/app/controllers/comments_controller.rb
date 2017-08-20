@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-		if @article.comments.create(comment_params)
+		comment = @article.comments.new(comment_params)
+		comment.update(user_id: current_user.id)
+		if comment.save
 			redirect_to @article
 		else
 			render 'new'
@@ -29,6 +31,6 @@ class CommentsController < ApplicationController
 	end
 
 	def comment_params
-		params.require(:comment).permit(:body, :user_id)
+		params.require(:comment).permit(:body)
 	end
 end

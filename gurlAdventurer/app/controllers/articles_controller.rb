@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 		@related_articles = @article.find_related_tags[0,3]
-		@comments = Comment.where(commentable_id: @article.id, Commentable_type: 'article')
+		@comments = Comment.where(commentable_id: @article.id, commentable_type: 'Article')
 	end
 
 	def new

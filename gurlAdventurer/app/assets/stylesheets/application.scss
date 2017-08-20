@@ -19,9 +19,12 @@
 
 @import 'foundation';
 
+@import 'foundation-icons';
+
 $primary-color: #B48DDB;
 $secondary-color:#80B229;
 $dark-grey: #444;
+$light-grey: #8f8f8f;
 
 @font-face{
 	font-family: 'goldfinger';
@@ -94,7 +97,6 @@ section.top-bar-section {
 	}
 }
 
-
 .container {
   @include grid-row;
 }
@@ -107,9 +109,31 @@ section.top-bar-section {
 	padding-top: 10px;
 }
 
+.pad-left {
+	padding-left:10px
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.small-grey {
+	font-size: 0.8rem;
+	color: $light-grey;
+}
+
 .header-divider {
 	font-size: 1.3rem;
 	width:100%;
 	border-bottom: 1px solid $dark-grey;
 	margin-bottom: 15px;
+}
+
+.comment-box {
+	margin: 10px 0px 10px 50px;
+	color: $dark-grey;
+}
+
+.avatar-small {
+	border-radius: 50%;
 }
