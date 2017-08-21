@@ -38,6 +38,7 @@ gem 'devise'
 
 gem 'social-share-button', '~> 0.1.6'
 
+gem 'rails_admin', '~> 1.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
