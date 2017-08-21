@@ -12,6 +12,9 @@ RailsAdmin.config do |config|
 
 
   config.model 'Article' do
+    configure :body do
+      html_attributes rows: 40, cols: 70
+    end
     edit do
       fields_of_type :tag_list do
         partial 'tag_list_with_suggestions'
