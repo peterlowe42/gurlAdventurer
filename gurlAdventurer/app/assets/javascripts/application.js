@@ -13,10 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require foundation
 //= require sticky_kit
 //= require jquery.dotdotdot.min
+//= require social-share-button
+//= require_tree .
 
 $(document).foundation();
 $(function(){ $(document).foundation(); });
