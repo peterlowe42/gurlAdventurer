@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
+	before_filter :log_view, only: [:show]
 
 	def index
 		@articles = Article.all.order("created_at desc").to_a
@@ -43,5 +44,11 @@ class ArticlesController < ApplicationController
 
 		def params_article
 			params.require(:article).permit(:title, :body, :author, :image, :tag_list, :feature)
+		end
+
+		def log_view
+			@article = Article.find(params[:id])
+			user_id = user_signed_in? ? current_user.id : nil 
+			@article.views.create(ip_address: request.remote_ip, user_id: user_id)
 		end
 end

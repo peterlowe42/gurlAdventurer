@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821233715) do
+ActiveRecord::Schema.define(version: 20170822225952) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -39,10 +39,14 @@ ActiveRecord::Schema.define(version: 20170821233715) do
   add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
 
   create_table "pictures", force: :cascade do |t|
-    t.strding   "caption"
+    t.string   "caption"
     t.integer  "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -96,5 +100,16 @@ ActiveRecord::Schema.define(version: 20170821233715) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
+
+  create_table "views", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "ip_address"
+    t.integer  "viewable_id"
+    t.string   "viewable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "views", ["viewable_type", "viewable_id"], name: "index_views_on_viewable_type_and_viewable_id"
 
 end
