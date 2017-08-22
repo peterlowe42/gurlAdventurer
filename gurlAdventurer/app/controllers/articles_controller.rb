@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+	include ArticlesHelper
+
 	def index
 		@articles = Article.all.order("created_at desc").to_a
 
@@ -9,6 +11,7 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
+		@content = process_text(@article)
 		@related_articles = @article.find_related_tags[0,3]
 		@comments = Comment.where(commentable_id: @article.id, commentable_type: 'Article')
 	end

@@ -1,4 +1,5 @@
 class Picture < ActiveRecord::Base
+	attr_accessor :article_id
 	belongs_to :article
 
 	has_attached_file :img, styles: {large: "900x675#", medium: "300x225#"}, default_url: "/images/:style/missing.png"
