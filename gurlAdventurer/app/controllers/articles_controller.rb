@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 		@content = process_text(@article)
 		@related_articles = @article.find_related_tags[0,3]
 		@comments = Comment.where(commentable_id: @article.id, commentable_type: 'Article')
+		update_populatity(@article)
 	end
 
 	def new
@@ -44,6 +45,14 @@ class ArticlesController < ApplicationController
 
 		def params_article
 			params.require(:article).permit(:title, :body, :author, :image, :tag_list, :feature)
+		end
+
+		def update_populatity(article)
+			article_time = article.last_decay ? article.last_decay : article.created_at
+			time_elapsed = Time.now.utc - article_time 
+			article.popularity = exp_decay(article.popularity, time_elapsed) + 1
+			article.last_decay = Time.now.utc
+			article.save
 		end
 
 		def log_view
