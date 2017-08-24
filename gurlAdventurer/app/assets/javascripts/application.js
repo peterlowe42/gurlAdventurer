@@ -28,7 +28,7 @@ $(document).ready(function(){
 		e.preventDefault()
 	})
 
-  $("#preview-text").dotdotdot({
+  $(".preview-text").dotdotdot({
   });
 		var $window = $(window),
        $stickyCol = $('#sticky-col');

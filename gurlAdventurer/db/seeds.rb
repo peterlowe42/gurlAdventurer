@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Article.destroy_all
-Category.destory_all
+Category.destroy_all
 
 tags = ["Scuba", "Travel", "Kayaking", "Outdoors", "Hiking", "Sailing", "Extreame", "Lifestyle", "Sports", "Running"]
 categories = ["Sports", "Travel", "Outdoors", "Lifestyle"]
 
 categories.each do |cat|
-	Category.create(name: cat)
+	Category.create(title: cat)
 end
 
 20.times do

@@ -1,0 +1,30 @@
+<div class="row">
+
+	<div class="small-12 medium-9 columns">
+
+		<% @articles.each do |article| %>
+			<%= render partial: 'articles/preview_link', locals: {article: article} %>
+
+		<% end %>
+
+
+
+	</div>
+
+	<div class="medium-3 columns hide-for-small-only">
+	 	
+	 	<div class="grey-tab">
+	 		Sponsored Links
+	 	</div>
+
+	 	<%= image_tag 'placeholder' %>
+	 	<br><br>
+	 	<%= image_tag 'placeholder' %>
+	 	<br><br>
+	 	<%= image_tag 'placeholder' %>
+	 	<br><br>
+	 	<%= image_tag 'placeholder' %>
+	</div>
+
+</div>
+

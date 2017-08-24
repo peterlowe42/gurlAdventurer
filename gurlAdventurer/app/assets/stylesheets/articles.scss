@@ -88,3 +88,15 @@
 		line-height: 1.9rem;
 	}
 }
+
+.category-label {
+	position: absolute;
+	color:white;
+	background-color: fade-out($dark-grey, 0.3);
+	top:0%;
+	right:5%;
+	padding: 0px 5px;
+	&:hover {
+		background-color: $dark-grey;
+	}
+}

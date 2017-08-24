@@ -1,0 +1,17 @@
+<div class="row preview-row">
+	<div class="medium-4 columns int-strict">
+		<%= link_to article do %>
+			<%= image_tag article.image.url(:medium), class: "preview-img" %>
+		<% end %>
+	</div>
+
+	<div class="medium-8 columns preview-text" >
+		<%= link_to article do %>
+			<h4><%= article.title %></h4>
+		<% end %>
+		
+		<%= article.body %>
+
+	</div>
+			
+</div>
