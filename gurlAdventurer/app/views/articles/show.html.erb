@@ -1,17 +1,11 @@
 <div class="row">
 
-<div class="small-12 medium-9 columns" id="article-div">
+<div class="medium-12 large-9 columns" id="article-div">
 	<h1 class="article-title"><%= @article.title %></h1>
-	<div class="article-info">
-		<div class="article-author">
-			<span class="">By </span>
-			<span class="author-name"><%= @article.author %></span>
-		</div>
-		<div class="article-date">
-			- <%= @article.created_at.strftime("%a, %d %b %Y") %>
-		</div>
-	</div>
-	<div class="image-box small-12 columns">
+	
+	<%= render partial: 'article_info', locals: { article: @article } %>
+
+	<div class="image-box row collapse">
 		<%= image_tag @article.image.url(:large) %>
 	</div>
 	<div class="article-body">
@@ -50,13 +44,13 @@
 
 	</div>
 	<div class='rowcollapse'>
-		<%= render 'comments/form' %>	  
+		<%= render 'comments/form' %>	 
 	</div>			
 </div>
 
 
 
-<div class="medium-3 columns hide-for-small-only" id="sticky-col">	
+<div class="large-3 columns hide-for-small-only" id="sticky-col">	
  	<div class="header-divider small">
  		<span>Related Articles</span>
  	</div>

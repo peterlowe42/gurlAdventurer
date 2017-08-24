@@ -1,0 +1,21 @@
+<div class="article-info">
+	<div>  
+		<span class="">By </span>
+		<span class="author-name"><%= article.author %></span>
+		<span class="article-date">
+			- <%= article.created_at.strftime("%a, %d %b %Y") %>
+		</span>
+	</div>	
+
+	<div class='article-stats'>
+		<div class='a-stat'>
+		  <i class='fi-eye'></i>	
+		  <span><%= View.where(viewable_id: article.id, viewable_type: 'Article').count%></span>
+		</div>
+
+		<div class='a-stat'>	  
+		 	<i class='fi-comment'></i>
+		 	<span><%= Comment.where(commentable_id: article.id, commentable_type: 'Article').count %></span>
+		</div>	
+	</div>	
+</div>
