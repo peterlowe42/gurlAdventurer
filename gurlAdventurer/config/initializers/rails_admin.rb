@@ -2,26 +2,19 @@ include RailsAdminTagList::SuggestionsHelper
 
 RailsAdmin.config do |config|
 
-  config.authorize_with do
-    if current_user
-      redirect_to main_app.root_path unless current_user.admin == true
-    else
-      redirect_to main_app.user_session_path
-    end
-  end
-
-
+  ### Popular gems integration
   config.model 'Article' do
     configure :body do
-      html_attributes rows: 40, cols: 70
+      html_attributes rows: 50, cols: 70
     end
+
     edit do
       fields_of_type :tag_list do
-        partial 'tag_list_with_suggestions'
+        partial 'tag_list_with_suggestions'        
       end
     end
   end
-  ### Popular gems integration
+
 
   ## == Devise ==
   # config.authenticate_with do

@@ -102,6 +102,11 @@ section.top-bar-section {
   @include grid-row;
 }
 
+.int-strict {
+	max-height: 100%;
+	max-width:100%;
+}
+
 #main-content {
 	padding-top: 20px; 
 }
@@ -137,4 +142,26 @@ section.top-bar-section {
 
 .avatar-small {
 	border-radius: 50%;
+}
+
+.preview-row {
+	height: 200px
+}
+
+.preview-img {
+	max-height: 100%;
+	width: auto;
+}
+
+.article-details {
+	height: 100%;
+}
+
+.preview-text {
+	max-height: 195px;
+	color:$dark-grey;
+}
+
+.preview-row {
+	margin-bottom: 20px;
 }

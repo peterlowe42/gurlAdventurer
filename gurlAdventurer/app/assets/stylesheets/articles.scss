@@ -71,3 +71,32 @@
 	color:$dark-grey;
 }
 
+.fig {
+	display:flex;
+	flex-direction:column;
+	align-items:center; 
+}
+
+.fig-caption {
+	color: $light-grey;
+	font-size: 0.8rem;
+}
+
+.article-body {
+	p{		
+		font-size: 1.1rem;
+		line-height: 1.9rem;
+	}
+}
+
+.category-label {
+	position: absolute;
+	color:white;
+	background-color: fade-out($dark-grey, 0.3);
+	top:0%;
+	right:5%;
+	padding: 0px 5px;
+	&:hover {
+		background-color: $dark-grey;
+	}
+}
