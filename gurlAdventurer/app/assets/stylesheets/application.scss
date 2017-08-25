@@ -257,3 +257,33 @@ section.top-bar-section {
 		background-color: $dark-grey;
 	}
 }
+
+.side-link {
+	display: flex;
+	height:100px;
+	width:100%;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.side-link-left {
+	padding: 0;
+	height:100%;
+	width:40%;
+}
+
+.side-link-right {
+ padding-left: 15px;
+ width:60%;
+ height: 100%; 
+}
+
+.side-title {
+	max-height: 80%;
+	overflow:hidden;
+}
+
+.date-small {
+	font-size: 0.7rem;
+	color: $light-grey;
+}

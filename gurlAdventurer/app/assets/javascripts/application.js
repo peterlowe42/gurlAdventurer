@@ -29,6 +29,8 @@ $(document).ready(function(){
 
   $(".preview-text").dotdotdot({
   });
+
+  $(".side-title").dotdotdot({});
   
   // $('.banner-img').each(function(){
   //   var height = $(this).height();

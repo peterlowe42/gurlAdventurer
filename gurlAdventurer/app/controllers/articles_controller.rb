@@ -6,10 +6,13 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = Article.all.order("created_at desc").to_a
-
 		@featured = Article.where(featured: true).order("created_at desc")[0..2] 
-
 		@trending = Article.order(popularity: :desc)[0..3]
+		popCatecories = Category.order(popularity: :desc)[0..1]
+		catOneArticles = Article.where(category_id: popCatecories[0]).order(created_at: :desc)
+		catTwoArticles = Article.where(category_id: popCatecories[1]).order(created_at: :desc)
+		@category_hash = { popCatecories[0].title => catOneArticles,
+											 popCatecories[1].title => catTwoArticles }
 	end
 
 	def show

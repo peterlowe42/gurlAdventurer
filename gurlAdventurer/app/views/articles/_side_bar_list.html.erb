@@ -1,0 +1,19 @@
+<% articles.each do |article| %>
+	<div class="side-link">
+		<div class='side-link-left'>	  
+			<%= link_to article do %>
+				<%= image_tag article.image.url(:thumb) %>
+
+			<% end %>
+		</div>	
+		<div class='side-link-right'>
+			<div class='side-title'>		  
+			  <%= link_to article do %>
+			  <h6><%= article.title %></h6>
+			  <% end %>
+			</div>	
+		  <span class='date-small'><%= article.created_at.strftime("%a, %d %b %Y") %></span>
+		</div>	
+	</div>
+
+<% end %>

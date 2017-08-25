@@ -18,18 +18,13 @@
 	</div>
 
 	<div class="medium-4 columns hide-for-small-only">
-	 	
-	 	<div class="grey-tab">
-	 		Sponsored Links
-	 	</div>
+	 	<% @category_hash.each do |title, articles| %>
+	 		<div class='header-divider'>
+	 		  <span><%= title %></span>
+	 		</div>
 
-	 	<%= image_tag 'placeholder' %>
-	 	<br><br>
-	 	<%= image_tag 'placeholder' %>
-	 	<br><br>
-	 	<%= image_tag 'placeholder' %>
-	 	<br><br>
-	 	<%= image_tag 'placeholder' %>
+	 		<%= render partial: 'articles/side_bar_list', locals: { articles: articles} %>
+	 	<% end %>
 	</div>
 
 </div>

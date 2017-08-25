@@ -4,12 +4,6 @@
 
 @import "application";
 
-a {
-	color: $dark-grey;
-	&:hover {
-		color: $primary-color;
-	}
-}
 .index-box {
 	position: relative;
 	display:flex;
