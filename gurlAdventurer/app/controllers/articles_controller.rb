@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 	before_filter :log_view, only: [:show]
 
 	def index
-		@articles = Article.all.order("created_at desc").to_a
+		@latest = Article.all.order("created_at desc").to_a[0..5]
 		@featured = Article.where(featured: true).order("created_at desc")[0..2] 
 		@trending = Article.order(popularity: :desc)[0..3]
 		popCatecories = Category.order(popularity: :desc)[0..1]

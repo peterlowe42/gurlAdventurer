@@ -37,6 +37,10 @@ $size: 35px;
   }
 }
 
+.top-bar ul {
+	background-color: transparent;
+}
+
 
 a {
 	color: $dark-grey;
@@ -98,9 +102,6 @@ nav.top-bar {
 	padding:0;
 	box-shadow: 0px 5px 10px #dad4d4;
 	z-index: 2;
-	&.right {
-		justify-content: right;
-	}
 }
 
 section.top-bar-section {
@@ -109,19 +110,16 @@ section.top-bar-section {
 
 .nav-btn {
 	text-align: center;
-	background-color: $primary-color !important;
+	background-color: $primary-color;
 	font-weight: bold;
 	padding: 1rem 1rem !important;
 	color:white !important;
 	@include transition(background-color, 1.5s);
 	&:hover {
-		background-color: darken($primary-color, 10%) !important;
+		background-color: darken($primary-color, 10%);
 		color:white;
 	}
 
-	&.small {
-		padding: 0.5rem 0.5rem !important;
-	}
 }
 
 .container {

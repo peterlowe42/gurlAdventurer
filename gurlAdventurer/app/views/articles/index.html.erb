@@ -15,9 +15,15 @@
 			<%=render partial: 'articles/preview_link', locals: { article: article } %>
 		<%end%>
 
+		<div class='header-divider'>
+			<span>Latest Articles</span>
+		</div> 
+		<% @latest.each do |article| %>
+			<%=render partial: 'articles/preview_link', locals: { article: article } %>
+		<%end%>
 	</div>
 
-	<div class="medium-4 columns hide-for-small-only">
+	<div class="medium-4 columns hide-for-small-only" id='sticky-bottom'>
 	 	<% @category_hash.each do |title, articles| %>
 	 		<div class='header-divider'>
 	 		  <span><%= title %></span>
