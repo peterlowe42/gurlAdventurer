@@ -23,9 +23,19 @@
 @import 'foundation-icons';
 
 $primary-color: #B48DDB;
-$secondary-color:#80B229;
+$secondary-color:#489a15;
 $dark-grey: #444;
 $light-grey: #8f8f8f;
+
+$size: 24px;
+
+.social-share-button-facebook {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  
+}
+
 
 @font-face{
 	font-family: 'goldfinger';
@@ -53,6 +63,13 @@ $light-grey: #8f8f8f;
 @mixin flex-centered {
 	display:flex;
 	justify-content:center; 
+}
+
+@mixin banner-col {
+	height: 500px;
+	margin:0px;
+	padding:0px;
+	overflow: hidden;
 }
 
 #title-banner {
@@ -102,9 +119,49 @@ section.top-bar-section {
   @include grid-row;
 }
 
+.banner-block {
+	display:flex;
+	height:500px;
+}
+
+
+.banner-col-60 {
+	@include banner-col;
+	width: 60%;
+}
+
+.banner-col-40 {
+	@include banner-col;
+	width:40%;
+}
+
+.banner-split-50 {
+	height:50%;
+	width:100%;
+	overflow: hidden;
+}
+
+.banner-img {
+	min-height: 100%;
+	min-width:100%;
+	max-width:none;
+	@include transition(min-width, 1s);
+	@include transition(min-height, 1s);
+	&:hover {
+		min-width:105%;
+		min-height:105%
+	}
+}
+
 .int-strict {
 	max-height: 100%;
 	max-width:100%;
+}
+
+.rel-fill {
+	position:relative;
+	height:100%;
+	width:100%
 }
 
 #main-content {
@@ -173,4 +230,16 @@ section.top-bar-section {
 
 .preview-row {
 	margin-bottom: 20px;
+}
+
+.category-label {
+	position: absolute;
+	color:white;
+	background-color: fade-out($dark-grey, 0.3);
+	top:0%;
+	right:0%;
+	padding: 0px 5px;
+	&:hover {
+		background-color: $dark-grey;
+	}
 }

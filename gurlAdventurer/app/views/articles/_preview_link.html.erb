@@ -9,6 +9,8 @@
 		<%= link_to article do %>
 			<h4><%= article.title %></h4>
 		<% end %>
+
+		<%= render partial: 'articles/article_info', locals: { article: article } %>
 		
 		<%= article.body %>
 

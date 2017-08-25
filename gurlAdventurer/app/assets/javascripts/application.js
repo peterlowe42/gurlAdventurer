@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require foundation
 //= require sticky_kit
 //= require jquery.dotdotdot.min
@@ -30,15 +29,24 @@ $(document).ready(function(){
 
   $(".preview-text").dotdotdot({
   });
-		var $window = $(window),
+  
+  // $('.banner-img').each(function(){
+  //   var height = $(this).height();
+  //   var parentHeight = $(this).parents("div:first").height();
+  //   var diff = height - parentHeight;
+  //   $(this).css('margin-top', -diff/4); 
+  // })
+    var $window = $(window),
        $stickyCol = $('#sticky-col');
-       colTop = $stickyCol.offset().top;
+       if (typeof $stickyCol.offset() != undefined) {
 
-   $window.scroll(function() {
-        if ($window.scrollTop() > colTop) {
-        	$stickyCol.stick_in_parent();
-        }
-    });
+        colTop = $stickyCol.offset().top;
 
+       $window.scroll(function() {
+            if ($window.scrollTop() > colTop) {
+              $stickyCol.stick_in_parent();
+            }
+        });
+       }
 
 })
