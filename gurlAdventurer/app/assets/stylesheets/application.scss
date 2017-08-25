@@ -27,13 +27,14 @@ $secondary-color:#489a15;
 $dark-grey: #444;
 $light-grey: #8f8f8f;
 
-$size: 24px;
+$size: 35px;
 
-.social-share-button-facebook {
+.social-share-button {
+  .ssb-icon {
     background-size: $size $size;
     height: $size;
     width: $size;
-  
+  }
 }
 
 
