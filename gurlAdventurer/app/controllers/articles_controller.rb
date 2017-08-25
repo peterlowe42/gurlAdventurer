@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
 	def index
 		@articles = Article.all.order("created_at desc").to_a
 
-		@feature = Article.where(featured: true).order("created_at desc")[0] 
+		@featured = Article.where(featured: true).order("created_at desc")[0..2] 
 
-		@articles.reject! { |article| article == @feature }
+		@trending = Article.order(popularity: :desc)[0..3]
 	end
 
 	def show

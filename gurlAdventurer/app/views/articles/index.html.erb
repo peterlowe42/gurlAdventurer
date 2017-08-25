@@ -1,42 +1,23 @@
-<div class="row">
+<div class="row collapse">
 		<div class="row collapse" id="feature">
-			<%= render partial: 'articles/header_block_3', locals: { articles: @articles.to_a[0..3] } %>
+			<%= render partial: 'articles/header_block_3', locals: { articles: @featured } %>
 			
 		</div>
 
 		
 <div class="row">
 
-	<div class="small-12 medium-9 columns">
-
-
-
-		<div class="row small-up-1 medium-up-2 large-up-3">
-
-			<% @articles.each do |article| %>
-
-				<div class="column column-block index-box">
-					<% category = Category.where(id: article.category_id).to_a[0] %>
-					<%= link_to category_path(id: category.id) do %>
-						<div class="category-label">
-							<%= category.title %>
-						</div>
-					<% end %>
-					<%= link_to article_path(id: article.id ) do %>
-						<%= image_tag article.image.url(:medium) %>
-						<div class="title-box">
-							<%= article.title %>
-						</div>
-					<% end %>
-				</div>
-
-			<% end %>
-
+	<div class="small-12 medium-8 columns">
+		<div class='header-divider'>
+			<span>Trending Now</span>
 		</div>
+		<% @trending.each do |article| %>
+			<%=render partial: 'articles/preview_link', locals: { article: article } %>
+		<%end%>
 
 	</div>
 
-	<div class="medium-3 columns hide-for-small-only">
+	<div class="medium-4 columns hide-for-small-only">
 	 	
 	 	<div class="grey-tab">
 	 		Sponsored Links

@@ -1,5 +1,11 @@
 <div class="row preview-row">
-	<div class="medium-4 columns int-strict">
+	<div class="medium-4 columns preview-left">
+		<% category = Category.where(id: article.category_id).to_a[0] %>
+		<%= link_to category_path(id: category.id) do %>
+			<div class="category-label">
+				<%= category.title %>
+			</div>
+		<% end %>
 		<%= link_to article do %>
 			<%= image_tag article.image.url(:medium), class: "preview-img" %>
 		<% end %>
@@ -7,7 +13,7 @@
 
 	<div class="medium-8 columns preview-text" >
 		<%= link_to article do %>
-			<h4><%= article.title %></h4>
+			<h5><%= article.title %></h5>
 		<% end %>
 
 		<%= render partial: 'articles/article_info', locals: { article: article } %>

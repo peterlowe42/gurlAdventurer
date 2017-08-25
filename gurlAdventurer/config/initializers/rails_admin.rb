@@ -4,6 +4,7 @@ RailsAdmin.config do |config|
 
   ### Popular gems integration
   config.model 'Article' do
+
     configure :body do
       html_attributes rows: 50, cols: 70
     end

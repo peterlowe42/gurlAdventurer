@@ -36,17 +36,26 @@ $(document).ready(function(){
   //   var diff = height - parentHeight;
   //   $(this).css('margin-top', -diff/4); 
   // })
-    var $window = $(window),
-       $stickyCol = $('#sticky-col');
-       if (typeof $stickyCol.offset() != undefined) {
+    var $window = $(window);
+    if ($('#sticky-col').length) {
 
-        colTop = $stickyCol.offset().top;
+    colTop = $('#sticky-col').offset().top;
 
-       $window.scroll(function() {
-            if ($window.scrollTop() > colTop) {
-              $stickyCol.stick_in_parent();
-            }
-        });
-       }
+    $window.scroll(function() {
+      if ($window.scrollTop() > colTop) {
+        $('#sticky-col').stick_in_parent();
+      }
+      });
+    }
+
+    $stickyMenu = $('#responsive-menu');
+
+    menuTop = $stickyMenu.offset().top;
+
+    $window.scroll(function() {
+      if($window.scrollTop() > menuTop) {
+        $stickyMenu.stick_in_parent();
+      }
+    })
 
 })

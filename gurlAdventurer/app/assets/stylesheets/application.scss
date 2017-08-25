@@ -38,6 +38,13 @@ $size: 35px;
 }
 
 
+a {
+	color: $dark-grey;
+	&:hover {
+		color: $primary-color;
+	}
+}
+
 @font-face{
 	font-family: 'goldfinger';
 	src:font-url('goldfinger.ttf') format('truetype');
@@ -90,6 +97,7 @@ nav.top-bar {
 	background-color: $primary-color;
 	padding:0;
 	box-shadow: 0px 5px 10px #dad4d4;
+	z-index: 2;
 	&.right {
 		justify-content: right;
 	}
@@ -231,6 +239,11 @@ section.top-bar-section {
 
 .preview-row {
 	margin-bottom: 20px;
+}
+
+.preview-left {
+	position:relative;
+	padding-right: 0px;
 }
 
 .category-label {
