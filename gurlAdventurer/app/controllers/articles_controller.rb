@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
+	include ApplicationHelper
+
 	before_filter :log_view, only: [:show]
 
 	def index
@@ -15,7 +17,9 @@ class ArticlesController < ApplicationController
 		@content = process_text(@article)
 		@related_articles = @article.find_related_tags[0,3]
 		@comments = Comment.where(commentable_id: @article.id, commentable_type: 'Article')
-		update_populatity(@article)
+		category = Category.where(id: @article.category_id).to_a[0]
+		update_popularity(category)
+		update_popularity(@article)
 	end
 
 	def new
@@ -45,14 +49,6 @@ class ArticlesController < ApplicationController
 
 		def params_article
 			params.require(:article).permit(:title, :body, :author, :image, :tag_list, :feature)
-		end
-
-		def update_populatity(article)
-			article_time = article.last_decay ? article.last_decay : article.created_at
-			time_elapsed = Time.now.utc - article_time 
-			article.popularity = exp_decay(article.popularity, time_elapsed) + 1
-			article.last_decay = Time.now.utc
-			article.save
 		end
 
 		def log_view
