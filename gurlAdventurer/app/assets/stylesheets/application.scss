@@ -89,10 +89,24 @@ a {
 footer {
 	height: 200px;
 	width: 100%;
-	background-color: darken($primary-color,30%)
+	margin-top: 40px;
+	background-color: $dark-grey;
+	color: white;
 }
 
-#title-banner {
+.footer-logo {
+	display: flex;
+	padding-top:30px;
+	width:100; 
+	justify-content:center;
+	color: white;
+	h1 {
+		font-family: 'Southern';
+		font-size: 3rem;
+	}
+}
+
+.title-banner {
 	text-align: center;
 	font-family: 'Southern';
 	font-size: 5rem;
