@@ -78,6 +78,9 @@ $size: 35px;
 	background-color: transparent;
 }
 
+#small-top-bar {
+	width: 100%;
+}
 
 a {
 	color: $dark-grey;
@@ -106,11 +109,15 @@ footer {
 	}
 }
 
-.title-banner {
-	text-align: center;
-	font-family: 'Southern';
-	font-size: 5rem;
+#title-banner {
+	display:flex;
+	justify-content:center;
+	height: 30%;
 	background-color: fade-out($primary-color, 0.8);
+	img {
+		height: 400px;
+		max-width: none;
+	}
 }
 
 .title-bar {
@@ -118,7 +125,7 @@ footer {
 	padding: 1rem 1rem;
 }
 
-nav.top-bar {
+#responsive-menu {
 	justify-content:center;
 	background-color: $primary-color;
 	padding:0;
@@ -137,6 +144,9 @@ section.top-bar-section {
 	padding: 1rem 1rem !important;
 	color:white !important;
 	@include transition(background-color, 1.5s);
+	&.small {
+		padding:0 !important;
+	}
 	&:hover {
 		background-color: darken($primary-color, 10%);
 		color:white;
