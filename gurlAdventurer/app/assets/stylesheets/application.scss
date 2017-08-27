@@ -100,12 +100,12 @@ footer {
 .footer-logo {
 	display: flex;
 	padding-top:30px;
-	width:100; 
 	justify-content:center;
 	color: white;
-	h1 {
-		font-family: 'Southern';
-		font-size: 3rem;
+	img {
+		height:100px;
+		max-width: none;
+		filter: invert(100%);
 	}
 }
 
