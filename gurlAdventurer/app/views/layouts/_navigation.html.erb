@@ -3,18 +3,15 @@
 
 </div>
 
-
-
-
   <nav class="top-bar" data-topbar role="navigation" id="responsive-menu">
 
     <section class="top-bar-section">
       <ul class="vertical medium-horizontal menu" data-dropdown-menu>
-        <li><a class="nav-btn" href="#">HOME</a></li>
-        <li><a class="nav-btn" href="#">SPORTS</a></li>
-        <li><a class="nav-btn" href="#">TRAVEL</a></li>
-        <li><a class="nav-btn" href="#">OUTDOORS</a></li>
-        <li><a class="nav-btn" href="#">LIFESTYLE</a></li>
+        <li><%= link_to "HOME", root_path ,class:'nav-btn' %></li>
+        <li><%= link_to 'SPORTS', category_path(id: 1),class:'nav-btn' %></li>
+        <li><%= link_to 'TRAVEL', category_path(id: 2),class:'nav-btn' %></li>
+        <li><%= link_to 'OUTDOORS', category_path(id: 3),class:'nav-btn' %></li>
+        <li><%= link_to 'LIFESTYLE', category_path(id: 4),class:'nav-btn' %></li>
       </ul>
 
     </section>

@@ -23,10 +23,6 @@ $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
 
-	$(".nav-btn").click(function(e) {
-		e.preventDefault()
-	})
-
   $(".preview-text").dotdotdot({
   });
 

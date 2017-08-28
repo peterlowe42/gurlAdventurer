@@ -79,6 +79,9 @@ $size: 35px;
 }
 
 #small-top-bar {
+	display:flex;
+	justify-content: flex-end;
+	background-color: $primary-color;
 	width: 100%;
 }
 
@@ -90,6 +93,7 @@ a {
 }
 
 footer {
+
 	height: 200px;
 	width: 100%;
 	margin-top: 40px;
@@ -109,6 +113,15 @@ footer {
 	}
 }
 
+.menu-small {
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	a { 
+		color: white;
+		padding:5px;}
+}
+
 #title-banner {
 	display:flex;
 	justify-content:center;
@@ -119,6 +132,7 @@ footer {
 		max-width: none;
 	}
 }
+
 
 .title-bar {
 	background-color: $primary-color;
@@ -137,6 +151,15 @@ section.top-bar-section {
 	display: inline-block;
 }
 
+.small-nav-btn {
+	padding: 0rem 1rem;
+	font-weight: bold;
+	color:white;
+	&:hover {
+		color:white;
+	}
+}
+
 .nav-btn {
 	text-align: center;
 	background-color: $primary-color;
@@ -144,14 +167,11 @@ section.top-bar-section {
 	padding: 1rem 1rem !important;
 	color:white !important;
 	@include transition(background-color, 1.5s);
-	&.small {
-		padding:0 !important;
-	}
+
 	&:hover {
 		background-color: darken($primary-color, 10%);
 		color:white;
 	}
-
 }
 
 .container {
