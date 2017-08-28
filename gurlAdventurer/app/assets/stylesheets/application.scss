@@ -133,10 +133,9 @@ footer {
 #title-banner {
 	display:flex;
 	justify-content:center;
-	height: 30%;
 	background-color: fade-out($primary-color, 0.8);
 	img {
-		height: 400px;
+		height: 250px;
 		max-width: none;
 	}
 }
@@ -408,6 +407,9 @@ section.top-bar-section {
 	}
 	a {
 		color: white;
+		&:hover{
+			color: $dark-grey;
+		}
 	}
 
 }
