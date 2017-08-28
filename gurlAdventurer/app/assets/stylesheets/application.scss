@@ -22,7 +22,9 @@
 
 @import 'foundation-icons';
 
-$primary-color: #B48DDB;
+
+
+$primary-color: #734c99;
 $secondary-color:#489a15;
 $dark-grey: #444;
 $light-grey: #8f8f8f;
@@ -83,6 +85,12 @@ $size: 35px;
 	justify-content: flex-end;
 	background-color: $primary-color;
 	width: 100%;
+	a {
+		color: white;
+		font-weight:bold;
+		&:hover { 
+			color: white}
+	}
 }
 
 a {
@@ -356,3 +364,62 @@ section.top-bar-section {
 	}
 
 }
+
+.alert-div {
+	position:fixed;
+	width:80%;
+	height: 50px;
+	left:10%;
+	top:10%;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	color: white;
+	background-color:#1F7DB2;
+	border: 1px solid $dark-grey;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	&.alert {
+		background-color: fade-out(#D73836, 0.3);
+	}
+	&.notice {
+		background-color: fade-out(#29B253,0.3) ;
+	}
+	&.warning {
+		background-color:fade-out(#ED7433,0.3) 
+	}
+	.alert-close {
+		position: absolute;
+		right: 10px;
+		top:5px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.form-pop-up {
+	text-align: center;
+	background-color: $primary-color;
+	color: white;
+	width:450px;
+	label {
+		color: white;
+	}
+	a {
+		color: white;
+	}
+
+}
+
+	.simple-input, .simple-input:focus {
+		color: white;
+		max-width: 80%;
+		border-style: solid;
+		border-width: 0px 0px 1px 0px;
+		border-color: white;
+		drop-shadow:none;
+		box-shadow: none;
+		margin:auto;
+		background-color: $primary-color;
+	} 

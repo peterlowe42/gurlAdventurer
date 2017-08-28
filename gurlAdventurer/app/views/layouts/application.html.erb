@@ -12,13 +12,18 @@
   </head>
 
   <body>
+    <div id="user-login" class="reveal form-pop-up" data-reveal>
+      <%= render 'users/sessions/new' %>
+      <a class="close-button" data-close>&#215;</a>
+    </div>
     <nav id='small-top-bar'>
       <div id='member-login'>
         <% if user_signed_in? %>
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete,class: 'small-nav-btn' %>
         <% else %>
-          <%= link_to 'Log In', user_session_path, class: 'small-nav-btn' %>
-        <%end%>
+          <%= link_to "Log In", '#', data: {:'open' => 'user-login'} %>
+          <%= link_to 'Join', new_user_registration_path, class: 'small-nav-btn'%>
+          <%end%>
       </div>
     </nav>
   
@@ -30,6 +35,11 @@
     <%= render "layouts/navigation"%>
 
     <div class="container" id="main-content">
+      <% flash.each do |key, value| %>
+        <div class="alert-div <%= key %>"><%= value %>
+          <span class="alert-close">X</span>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>

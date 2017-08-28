@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require foundation
 //= require sticky_kit
 //= require jquery.dotdotdot.min
@@ -27,6 +28,11 @@ $(document).ready(function(){
   });
 
   $(".side-title").dotdotdot({});
+
+  $('.alert-close').click(function(){
+    console.log('Close Clicked')
+    $(this).parent().fadeOut();
+  })
   
   // $('.banner-img').each(function(){
   //   var height = $(this).height();
