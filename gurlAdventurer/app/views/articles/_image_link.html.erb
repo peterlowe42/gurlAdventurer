@@ -1,4 +1,4 @@
-<div class='rel-fill'>
+<div class='rel-fill image-link'>
 <% category = Category.where(id: article.category_id).to_a[0] %>
   <%= link_to category_path(id: category.id) do %>
 		<div class="category-label">

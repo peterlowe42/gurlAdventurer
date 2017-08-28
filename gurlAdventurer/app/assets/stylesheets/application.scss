@@ -206,7 +206,10 @@ section.top-bar-section {
 	max-width:none;
 	@include transition(min-width, 1s);
 	@include transition(min-height, 1s);
-	&:hover {
+}
+
+.image-link {
+	&:hover .banner-img {
 		min-width:105%;
 		min-height:105%
 	}
@@ -336,4 +339,20 @@ section.top-bar-section {
 .date-small {
 	font-size: 0.7rem;
 	color: $light-grey;
+}
+
+.pagination {
+	display: flex;
+	justify-content:center;
+
+	a, span, em {
+		display: flex;
+		justify-content:center;
+		align-items:center;
+		border: 1px solid fade-out($light-grey, 0.3);
+		width:40px;
+		height: 40px;
+		margin: 0px 5px;
+	}
+
 }

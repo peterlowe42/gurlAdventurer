@@ -1,26 +1,30 @@
 <div class="row collapse">
-		<div class="row collapse" id="feature">
-			<%= render partial: 'articles/header_block_3', locals: { articles: @featured } %>
-			
-		</div>
-
+		<% if  @featured %>
+			<div class="row collapse" id="feature">
+				<%= render partial: 'articles/header_block_3', locals: { articles: @featured } %>
+				
+			</div>
+		<%end%>
 		
 <div class="row">
 
 	<div class="small-12 medium-8 columns">
-		<div class='header-divider'>
-			<span>Trending Now</span>
-		</div>
-		<% @trending.each do |article| %>
-			<%=render partial: 'articles/preview_link', locals: { article: article } %>
+		<% if @trending %>
+			<div class='header-divider'>
+				<span>Trending Now</span>
+			</div>
+			<% @trending.each do |article| %>
+				<%=render partial: 'articles/preview_link', locals: { article: article } %>
+			<%end%>
 		<%end%>
-
 		<div class='header-divider'>
 			<span>Latest Articles</span>
 		</div> 
 		<% @latest.each do |article| %>
 			<%=render partial: 'articles/preview_link', locals: { article: article } %>
 		<%end%>
+
+		<%= will_paginate @latest, :previous_label => '<', :next_label => '>'  %>
 	</div>
 
 	<div class="medium-4 columns hide-for-small-only" id='sticky-bottom'>
