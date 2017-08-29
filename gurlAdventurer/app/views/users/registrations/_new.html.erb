@@ -29,10 +29,10 @@
  
 
   <div class="actions">
-    <%= f.submit "Sign up", class: 'button secondary' %>
+    <%= f.submit "Sign up", class: 'button primary' %>
   </div>
 <% end %>
  <br/>
- <%= link_to "Log in", new_session_path(resource_name) %><br/>
+ <%= link_to "Log In", '#', data: {:'open' => 'user-login'} %><br/>
 
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br/>
+  <%= link_to "Didn't receive confirmation instructions", '#', data: {:'open' => 'user-confirmation'} %>
