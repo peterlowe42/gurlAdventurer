@@ -31,8 +31,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'acts-as-taggable-on', '~> 4.0'
 
 gem 'devise'
-# Use Unicorn as the app server
-# gem 'unicorn'
+
 gem 'aws-sdk', '~> 2.0'
 
 gem 'social-share-button'
@@ -43,6 +42,7 @@ gem 'rails_admin', '~> 1.2'
 
 gem 'rails_admin_tag_list'
 
+gem "figaro"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
