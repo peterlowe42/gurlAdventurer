@@ -1,0 +1,38 @@
+<div class='large-8 columns'>
+
+	<div class='callout'>
+		<%= form_for @article do |f| %>
+			<p>
+				<%= f.label :title %><br>
+				<%=f.text_field :title%> 
+			</p>
+
+			<p>
+				<%= f.label :image, 'Main Image' %><br>
+				<%=f.file_field :image%> 
+			</p>
+
+			<p>
+				<%= f.label :body, 'Article Content' %><br>
+				<%= f.cktext_area :body, ckeditor: { toolbar: 'Full'} %>
+			</p>
+
+			<p>
+				<%= f.label :author %><br>
+				<%= f.text_field :author %>
+			</p>
+
+			<p>
+				<%= f.label :featured %>
+				<%= f.check_box :featured %>
+			</p>
+
+			<p>
+				<%= f.submit %>
+			</p>
+
+		<% end %>
+	</div>
+
+
+</div>

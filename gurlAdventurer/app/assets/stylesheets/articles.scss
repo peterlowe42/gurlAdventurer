@@ -1,3 +1,102 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "application";
+
+.index-box {
+	position: relative;
+	display:flex;
+	justify-content: center;
+}
+
+.title-box {
+	position:absolute;
+	max-width: 80%;
+  background:fade-out($secondary-color, 0.3);
+  bottom:0%;
+  // left:0.9375rem;
+  padding: 5px;
+  font-size:1.1rem;
+  color:white;
+  text-shadow: 1px 1px darken($secondary-color, 20%)
+}
+
+.grey-tab {
+	background: #dad4d4;
+	width:104px;
+	font-size:13px;
+	padding-left:3px;
+	margin-bottom:5px;
+}
+
+.image-box {
+	@include flex-centered;
+}
+
+.article-info {
+	display:flex;
+	color:$dark-grey;
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+
+.article-date {
+	padding-left: 5px;
+}
+
+.image-box {
+	margin-bottom: 10px; 
+}
+
+.vertical-spacer {
+	height: 10px;
+}
+
+.feature-img {
+	width: 100%;
+}
+
+#feature {
+	padding-bottom: 15px;
+}
+
+#feature-text {
+	padding-left: 0.8rem;
+}
+
+#preview-text {
+
+	max-height: 195px;
+	color:$dark-grey;
+}
+
+.fig {
+	display:flex;
+	flex-direction:column;
+	align-items:center; 
+}
+
+.fig-caption {
+	color: $light-grey;
+	font-size: 0.8rem;
+}
+
+.article-body {
+	p{		
+		font-size: 1.1rem;
+		line-height: 1.9rem;
+	}
+}
+
+.category-label {
+	position: absolute;
+	color:white;
+	background-color: fade-out($dark-grey, 0.3);
+	top:0%;
+	right:5%;
+	padding: 0px 5px;
+	&:hover {
+		background-color: $dark-grey;
+	}
+}
