@@ -1,4 +1,4 @@
-d# This file should contain all the record creation needed to seed the database with its default values.
+# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -26,8 +26,6 @@ end
 										category_id: rand(1..4)
 										})
 end
-
-
 
 Article.all.to_a[0..2].each do |article|
 	article.update(featured: true)
