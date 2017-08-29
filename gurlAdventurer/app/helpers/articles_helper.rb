@@ -1,6 +1,5 @@
 module ArticlesHelper
-	ARTICLE_LIFETIME = 86400 * 7 #7 days converted to seconds
-
+	
 	def process_text(article)
 		text = article.body
 		article_pics = article.pictures
@@ -22,8 +21,4 @@ module ArticlesHelper
 		return text
 	end
 
-	def exp_decay(value,elapsed) #value = current value elapsed = elapsed time in seconds
-		decay_fraction = elapsed/ARTICLE_LIFETIME	
-		return value * (Math.exp(1)**(-decay_fraction))
-	end
 end

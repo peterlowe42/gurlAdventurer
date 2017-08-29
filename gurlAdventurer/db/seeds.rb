@@ -29,4 +29,4 @@ end
 
 
 
-Article.first.update(featured: true)
+Article.all.to_a[0..2].update(featured: true)

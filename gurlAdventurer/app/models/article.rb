@@ -7,4 +7,10 @@ class Article < ActiveRecord::Base
 
 	has_attached_file :image, styles: {large: "900x675#", medium: "300x225#", thumb: "150x112#" }, default_url: "/images/:style/missing.png"
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+	validates_attachment_presence :image
+	
+	validates :title, presence: true, uniqueness: true
+	validates :body, presence: true 
+	validates :author, presence: true
+	validates :category_id, presence: true
 end

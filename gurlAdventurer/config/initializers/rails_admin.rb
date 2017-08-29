@@ -2,8 +2,18 @@ include RailsAdminTagList::SuggestionsHelper
 
 RailsAdmin.config do |config|
 
+  config.authorize_with do
+    if user_signed_in?
+      redirect_to main_app.root_path unless current_user.admin == true
+    else
+      redirect_to main_app.root_path
+    end
+  end
+
+
   ### Popular gems integration
   config.model 'Article' do
+
     configure :body do
       html_attributes rows: 50, cols: 70
     end

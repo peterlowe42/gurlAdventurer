@@ -1,0 +1,13 @@
+<div class='banner-block'>
+	<div class='banner-col-60'>
+	  <%= render partial: 'articles/image_link', locals: { article: articles[0], image_class: 'banner-img' } %>
+	</div>
+	<div class='banner-col-40'>
+	  <div class='banner-split-50'>
+	  	<%= render partial: 'articles/image_link', locals: { article: articles[1], image_class: 'banner-img' } %>
+	  </div>	
+	  <div class='banner-split-50'>
+	  	<%= render partial: 'articles/image_link', locals: { article: articles[2], image_class: 'banner-img' } %>
+	  </div>	
+	</div>	
+</div>

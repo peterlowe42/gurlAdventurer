@@ -1,0 +1,15 @@
+<div class='rel-fill image-link'>
+<% category = Category.where(id: article.category_id).to_a[0] %>
+  <%= link_to category_path(id: category.id) do %>
+		<div class="category-label">
+			<%= category.title %>
+		</div>
+	<% end %>
+	<%= link_to article_path(id: article.id ) do %>
+		<%= image_tag article.image.url(:medium), class: "#{image_class}" %>
+	<div class="title-box">
+		<%= article.title %>
+	</div>
+	<% end %>
+</div>	
+			

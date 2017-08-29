@@ -1,13 +1,21 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
+	include ApplicationHelper
+
 	before_filter :log_view, only: [:show]
+	before_action :confirm_admin, only: [:new, :edit, :update, :create]
 
 	def index
-		@articles = Article.all.order("created_at desc").to_a
-
-		@feature = Article.where(featured: true).order("created_at desc")[0] 
-
-		@articles.reject! { |article| article == @feature }
+		@latest = Article.paginate(:page => params[:page], :per_page => 5)
+		popCatecories = Category.order(popularity: :desc)[0..1]
+		catOneArticles = Article.where(category_id: popCatecories[0]).order(created_at: :desc)
+		catTwoArticles = Article.where(category_id: popCatecories[1]).order(created_at: :desc)
+		@category_hash = { popCatecories[0].title => catOneArticles,
+											 popCatecories[1].title => catTwoArticles }
+		if !params[:page] || params[:page] == '1'
+			@featured = Article.where(featured: true).order(created_at: :desc)[0..2] 
+			@trending = Article.order(popularity: :desc)[0..5]
+		end
 	end
 
 	def show
@@ -15,7 +23,9 @@ class ArticlesController < ApplicationController
 		@content = process_text(@article)
 		@related_articles = @article.find_related_tags[0,3]
 		@comments = Comment.where(commentable_id: @article.id, commentable_type: 'Article')
-		update_populatity(@article)
+		category = Category.where(id: @article.category_id).to_a[0]
+		update_popularity(category)
+		update_popularity(@article)
 	end
 
 	def new
@@ -47,17 +57,13 @@ class ArticlesController < ApplicationController
 			params.require(:article).permit(:title, :body, :author, :image, :tag_list, :feature)
 		end
 
-		def update_populatity(article)
-			article_time = article.last_decay ? article.last_decay : article.created_at
-			time_elapsed = Time.now.utc - article_time 
-			article.popularity = exp_decay(article.popularity, time_elapsed) + 1
-			article.last_decay = Time.now.utc
-			article.save
-		end
-
 		def log_view
 			@article = Article.find(params[:id])
 			user_id = user_signed_in? ? current_user.id : nil 
 			@article.views.create(ip_address: request.remote_ip, user_id: user_id)
+		end
+
+		def confirm_admin
+			redirect_to root_path unless user_signed_in? && current_user.admin == true
 		end
 end

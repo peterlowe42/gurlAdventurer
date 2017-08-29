@@ -22,8 +22,7 @@ Rails.application.routes.draw do
 
   resources :categories
 
-
-
+  get "/pages/:page" => "pages#show", as: 'page_show'
  
 
   # Example resource route with options:

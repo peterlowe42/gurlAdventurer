@@ -1,29 +1,40 @@
 <div class="row">
 
+  <div class='medium-12 columns'>
+		<h3><%= @category.title %></h3>
+		<%= render partial: 'articles/header_block_3', locals: { articles: @trending } %>
+  </div>	
+
 	<div class="small-12 medium-9 columns">
+
+
+
+	<div class='header-divider'>
+		<span>Latest</span>
+	</div>	
 
 		<% @articles.each do |article| %>
 			<%= render partial: 'articles/preview_link', locals: {article: article} %>
-
 		<% end %>
 
 
 
 	</div>
 
-	<div class="medium-3 columns hide-for-small-only">
-	 	
-	 	<div class="grey-tab">
-	 		Sponsored Links
+	<div class="medium-3 columns hide-for-small-only" id='sticky-bottom'>
+	 	<div class='header-divider'>
+	 	  <span>Featured</span>
+	 	</div>	
+
+	 	<%= render partial: 'articles/side_bar_list', locals: { articles: @featured } %>
+
+	 	<div class='header-divider'>
+	 	  <span>Popular</span>
 	 	</div>
 
-	 	<%= image_tag 'placeholder' %>
-	 	<br><br>
-	 	<%= image_tag 'placeholder' %>
-	 	<br><br>
-	 	<%= image_tag 'placeholder' %>
-	 	<br><br>
-	 	<%= image_tag 'placeholder' %>
+	 	<%= render partial: 'articles/side_bar_list', locals: {
+	 		articles: @popular } %>
+
 	</div>
 
 </div>
