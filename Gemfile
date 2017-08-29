@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.3.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
@@ -44,11 +44,14 @@ gem 'rails_admin_tag_list'
 
 gem "figaro"
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
 
 	gem 'pg'
+
+  gem 'rails_12factor'
 	
 end
 
