@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 	include ApplicationHelper
 
 	before_filter :log_view, only: [:show]
+	before_action :confirm_admin, only: [:new, :edit, :update, :create]
 
 	def index
 		@latest = Article.paginate(:page => params[:page], :per_page => 5)
@@ -13,7 +14,7 @@ class ArticlesController < ApplicationController
 											 popCatecories[1].title => catTwoArticles }
 		if !params[:page] || params[:page] == '1'
 			@featured = Article.where(featured: true).order(created_at: :desc)[0..2] 
-			@trending = Article.order(popularity: :desc)[0..3]
+			@trending = Article.order(popularity: :desc)[0..5]
 		end
 	end
 
@@ -60,5 +61,9 @@ class ArticlesController < ApplicationController
 			@article = Article.find(params[:id])
 			user_id = user_signed_in? ? current_user.id : nil 
 			@article.views.create(ip_address: request.remote_ip, user_id: user_id)
+		end
+
+		def confirm_admin
+			redirect_to root_path unless user_signed_in? && current_user.admin == true
 		end
 end

@@ -13,7 +13,7 @@
 
 	<div class="medium-8 columns preview-text" >
 		<%= link_to article do %>
-			<h5><%= article.title %></h5>
+			<h5 class='bold'><%= article.title %></h5>
 		<% end %>
 
 		<%= render partial: 'articles/article_info', locals: { article: article } %>

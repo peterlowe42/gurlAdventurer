@@ -1,0 +1,22 @@
+<div class='preview-verical'>
+	<div class='row collapse rel-fill'>
+		<% category = Category.where(id: article.category_id).to_a[0] %>
+				<%= link_to category_path(id: category.id) do %>
+					<div class="category-label">
+						<%= category.title %>
+					</div>
+				<%end%>
+		<%= link_to article do %>
+					<%= image_tag article.image.url(:medium), class: "preview-img wide" %>
+		<% end %>
+	</div>
+	<div class='row collapse preview-text'>
+		<%= link_to article do %>
+				<h5 class='bold'><%= article.title %></h5>
+			<% end %>
+
+			<%= render partial: 'articles/article_info', locals: { article: article } %>
+			
+			<%= article.body %>
+	</div> 
+</div>	

@@ -282,6 +282,10 @@ section.top-bar-section {
 .preview-img {
 	max-height: 100%;
 	width: auto;
+	&.wide {
+		width: 100%;
+		max-height:none;
+	}
 }
 
 .article-info {
