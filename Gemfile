@@ -33,6 +33,7 @@ gem 'acts-as-taggable-on', '~> 4.0'
 gem 'devise'
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'aws-sdk', '~> 2.0'
 
 gem 'social-share-button'
 
