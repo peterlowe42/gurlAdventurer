@@ -44,6 +44,8 @@ gem 'rails_admin_tag_list'
 
 gem "figaro"
 
+ gem 'unicorn'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
