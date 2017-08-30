@@ -42,8 +42,8 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
-  config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
-  config.assets.precompile =  %w( application.scss articles.scss foundation_and_overrides.scss *.js)
+
+  config.assets.precompile =  %w( application.scss articles.scss foundation_and_overrides.scss )
   config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif *.ico] 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
