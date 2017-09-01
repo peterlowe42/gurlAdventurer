@@ -2,7 +2,9 @@
 
   <div class='medium-12 columns'>
 		<h3><%= @category.title %></h3>
-		<%= render partial: 'articles/header_block_3', locals: { articles: @trending } %>
+		<% if @trending.length >= 3 %>
+			<%= render partial: 'articles/header_block_3', locals: { articles: @trending } %>
+		<%end%>
   </div>	
 
 	<div class="small-12 medium-9 columns">
@@ -12,13 +14,13 @@
 	<div class='header-divider'>
 		<span>Latest</span>
 	</div>	
-
-		<% @articles.each do |article| %>
-			<%= render partial: 'articles/preview_link', locals: {article: article} %>
-		<% end %>
-
-
-
+		<%if @articles.length %>
+			<% @articles.each do |article| %>
+				<%= render partial: 'articles/preview_link', locals: {article: article} %>
+			<% end %>
+		<% else %>
+			<h2>No articles to show</h2>
+		<%end%>
 	</div>
 
 	<div class="medium-3 columns hide-for-small-only" id='sticky-bottom'>

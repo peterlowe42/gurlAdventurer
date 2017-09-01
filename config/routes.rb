@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -23,8 +23,9 @@ Rails.application.routes.draw do
   resources :categories
 
   get "/pages/:page" => "pages#show", as: 'page_show'
- 
 
+  
+  devise_for :users, :controllers => { registrations: 'registrations' }
   # Example resource route with options:
   #   resources :products do
   #     member do
