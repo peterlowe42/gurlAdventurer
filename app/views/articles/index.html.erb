@@ -1,8 +1,7 @@
 <div class="row collapse">
-		<% if  @featured.length %>
+		<% if  @featured.length >= 3 %>
 			<div class="row collapse" id="feature">
-				<%= render partial: 'articles/header_block_3', locals: { articles: @featured } %>
-				
+				<%= render partial: 'articles/header_block_3', locals: { articles: @featured } %>				
 			</div>
 		<%end%>
 		
