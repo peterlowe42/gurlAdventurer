@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
   has_many :comments
 
   validates :email, presence: true
-  validates :username, presence: true
+  validates :username, presence: true,  :uniqueness => { :case_sensitive => false }
 end
