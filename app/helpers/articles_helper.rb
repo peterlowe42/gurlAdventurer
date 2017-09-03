@@ -11,7 +11,7 @@ module ArticlesHelper
 			if pic #if pic exists generate fig div html
 				url = pic.img.url(:large)
 				text.gsub!("<-#{tag}->", "<div class='fig'>
-																	<img src='#{url}' alt='pic.caption' width='#{tag_arr[1].strip}'/>
+																	<img src='#{url}' alt='#{pic.caption}' width='#{tag_arr[1].strip}'/>
 																	<span class='fig-caption'>#{pic.caption}</span>
 																	</div>")
 			else #else remove tag from text
