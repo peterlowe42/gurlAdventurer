@@ -6,15 +6,20 @@ class ArticlesController < ApplicationController
 	before_action :confirm_admin, only: [:new, :edit, :update, :create]
 
 	def index
-		@latest = Article.paginate(:page => params[:page], :per_page => 5)
-		popCatecories = Category.order(popularity: :desc)[0..1]
-		catOneArticles = Article.where(category_id: popCatecories[0]).order(created_at: :desc)
-		catTwoArticles = Article.where(category_id: popCatecories[1]).order(created_at: :desc)
-		@category_hash = { popCatecories[0].title => catOneArticles,
-											 popCatecories[1].title => catTwoArticles }
-		if !params[:page] || params[:page] == '1'
-			@featured = Article.where(featured: true).order(created_at: :desc)[0..2] 
-			@trending = Article.order(popularity: :desc)[0..5]
+		articles = Article.all
+		@latest = articles.paginate(:page => params[:page], :per_page => 5)
+		if @latest.length > 0 
+			popCatecories = Category.order(popularity: :desc)[0..1]
+			catOneArticles = articles.where(category_id: popCatecories[0]).order(created_at: :desc)
+			catTwoArticles = articles.where(category_id: popCatecories[1]).order(created_at: :desc)
+			@category_hash = { popCatecories[0].title => catOneArticles,
+												 popCatecories[1].title => catTwoArticles }
+			if !params[:page] || params[:page] == '1'
+				@featured = articles.where(featured: true).order(created_at: :desc)[0..2] 
+				@trending = articles.order(popularity: :desc)[0..5]
+			end
+		else
+			render 'no_articles'
 		end
 	end
 
