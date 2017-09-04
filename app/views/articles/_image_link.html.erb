@@ -6,7 +6,7 @@
 		</div>
 	<% end %>
 	<%= link_to article_path(id: article.id ) do %>
-		<%= image_tag article.image.url(:large), class: "#{image_class}" %>
+		<%= image_tag article.image.url(:medium), class: "#{image_class}" %>
 	<div class="title-box">
 		<%= article.title %>
 	</div>
