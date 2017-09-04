@@ -1,5 +1,5 @@
 <div class="row collapse">
-		<% if  @featured.length >= 3 %>
+		<% if  @featured && @featured.length >= 3 %>
 			<div class="row collapse" id="feature">
 				<%= render partial: 'articles/header_block_3', locals: { articles: @featured } %>				
 			</div>
@@ -8,7 +8,7 @@
 <div class="row">
 
 	<div class="small-12 medium-8 columns">
-		<% if @trending.length > 5 %>
+		<% if @trending &&  @trending.length > 5 %>
 			<div class='header-divider'>
 				<span>Trending Now</span>
 			</div>
