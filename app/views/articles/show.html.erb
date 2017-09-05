@@ -5,8 +5,8 @@
 	
 	<%= render partial: 'article_info', locals: { article: @article } %>
 
-	<div class="image-box row collapse">
-		<%= image_tag @article.image.url(:large) %>
+	<div class="row collapse">
+		<%= image_tag @article.image.url(:large), class:'title-img' %>
 	</div>
 	<div class="article-body">
 		<%= simple_format(@content)  %>

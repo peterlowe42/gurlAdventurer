@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 	def index
 		articles = Article.all
 		@latest = articles.paginate(:page => params[:page], :per_page => 5)
-		if @latest.length > 0 
+		if articles.length > 0 
 			popCatecories = Category.order(popularity: :desc)[0..1]
 			catOneArticles = articles.where(category_id: popCatecories[0]).order(created_at: :desc)
 			catTwoArticles = articles.where(category_id: popCatecories[1]).order(created_at: :desc)

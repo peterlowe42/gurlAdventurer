@@ -154,6 +154,13 @@ footer {
 	padding: 1rem 1rem;
 }
 
+
+.title-img {
+	width:100%;
+	margin-bottom: 20px;
+}
+
+
 #responsive-menu {
 	justify-content:center;
 	background-color: $primary-color;
@@ -409,7 +416,7 @@ section.top-bar-section {
 	}
 }
 
-.form-pop-up {
+.user-form {
 	text-align: center;
 	background-color: $primary-color;
 	color: white;
@@ -426,14 +433,20 @@ section.top-bar-section {
 
 }
 
-	.simple-input, .simple-input:focus {
-		color: white;
-		max-width: 80%;
-		border-style: solid;
-		border-width: 0px 0px 1px 0px;
-		border-color: white;
-		drop-shadow:none;
-		box-shadow: none;
-		margin:auto;
-		background-color: $primary-color;
-	} 
+.cont-centered {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.simple-input, .simple-input:focus {
+	color: white;
+	max-width: 80%;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: white;
+	drop-shadow:none;
+	box-shadow: none;
+	margin:auto;
+	background-color: $primary-color;
+} 
