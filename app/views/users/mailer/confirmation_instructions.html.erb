@@ -1,5 +1,27 @@
-<p>Welcome to Gurl Adventures<%= @email %>!</p>
+<div style="width:50%; 
+						margin: auto;
+						border: 1px solid #444;
+						padding: 30px">
+	<div style="width:100%; 
+							height:260px;
+							background:#e2daea;
+							display:flex;
+							align-items:center;
+							justify-content:center;">
+						  
+		<%=image_tag 'GALogoLarge', style: "width:40%" %>
+	</div>
+	<div style='padding:20px;'>	  
+		<h3>Welcome to Gurl Adventures <%= @email %>!</h3>
 
-<p>You can confirm your account email through the link below:</p>
+		<p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+		<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), style: "padding:10px;
+																																																					background:#1779ba;
+																																																					color:white;
+																																																					text-decoration:none;
+																																																					font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;" %></p>
+	</div>	
+	
+</div>
+
