@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829195419) do
+ActiveRecord::Schema.define(version: 20170910194359) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170829195419) do
     t.datetime "last_decay"
     t.integer  "category_id"
     t.boolean  "approved",           default: false
+    t.integer  "writer_id"
   end
 
   add_index "articles", ["category_id"], name: "index_articles_on_category_id"
@@ -125,5 +126,18 @@ ActiveRecord::Schema.define(version: 20170829195419) do
   end
 
   add_index "views", ["viewable_type", "viewable_id"], name: "index_views_on_viewable_type_and_viewable_id"
+
+  create_table "writers", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "middlename"
+    t.text     "bio"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
 
 end

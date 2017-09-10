@@ -12,11 +12,20 @@ RailsAdmin.config do |config|
 
 
   ### Popular gems integration
-  config.model 'Article' do
-
-    configure :body do
-      html_attributes rows: 50, cols: 70
+  config.model Article do
+    list do 
+      field :title
+      field :body
+      field :writer do 
+        searchable :firstname
+        pretty_value do
+          value.try(:firstname)
+        end
+      end
     end
+    # configure :body do
+    #   html_attributes rows: 50, cols: 70
+    # end
 
     edit do
       fields_of_type :tag_list do

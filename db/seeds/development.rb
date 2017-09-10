@@ -19,6 +19,6 @@ end
 										})
 end
 
-# Article.all.to_a[0..2].each do |article|
-# 	article.update(featured: true)
-# end
+Article.all.to_a[0..2].each do |article|
+	article.update(featured: true)
+end
