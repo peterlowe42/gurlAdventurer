@@ -24,8 +24,8 @@
 
 
 
-$primary-color: #734c99;
-$secondary-color:#489a15;
+$primary-color: #60a536;
+$secondary-color:#2cadcb;
 $dark-grey: #444;
 $light-grey: #8f8f8f;
 
@@ -141,15 +141,30 @@ footer {
 }
 
 #title-banner {
+	position: relative;
+	height: 250px;
+	overflow: hidden;
 	display:flex;
 	justify-content:center;
-	background-color: fade-out($primary-color, 0.8);
-	img {
-		height: 250px;
-		max-width: none;
-	}
+	background: image-url('MountainBanner.jpg');
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y:-15%;
 }
 
+#banner-logo {
+	position: absolute;
+	width: 100%;
+	display:flex;
+	justify-content:center;
+	background: fade-out($dark-grey, 0.3);
+}
+
+#main-logo {
+	height: 250px;
+	max-width: none;
+	filter: invert(100%);
+}
 
 .title-bar {
 	background-color: $primary-color;
