@@ -1,25 +1,28 @@
 <div class="row preview-row">
-	<div class="medium-4 columns preview-left">
-		<% category = Category.where(id: article.category_id).to_a[0] %>
-		<%= link_to category_path(id: category.id) do %>
-			<div class="category-label">
-				<%= category.title %>
-			</div>
-		<% end %>
-		<%= link_to article do %>
-			<%= image_tag article.image.url(:medium), class: "preview-img" %>
-		<% end %>
+	<div class="large-4 columns preview-left">
+		<div class='row collapse'>
+			<div class="img-box">
+				<% category = Category.where(id: article.category_id).to_a[0] %>
+				<%= link_to category_path(id: category.id) do %>
+				<div class="category-label">
+					<%= category.title %>
+				</div>
+				<% end %>
+				<%= link_to article do %>
+					<%= image_tag article.image.url(:medium), class: "preview-img" %>
+				<% end %>
+			</div>			
+		</div>
 	</div>
 
-	<div class="medium-8 columns preview-text" >
-		<%= link_to article do %>
-			<h5 class='bold'><%= article.title %></h5>
-		<% end %>
+	<div class="large-8 columns preview-text" >
+			<%= link_to article do %>
+				<h5 class='bold'><%= article.title %></h5>
+			<% end %>
 
-		<%= render partial: 'articles/article_info', locals: { article: article } %>
+			<%= render partial: 'articles/article_info', locals: { article: article } %>
 		
-		<%= article.body %>
-
+			<%= article.body %>
 	</div>
 			
 </div>

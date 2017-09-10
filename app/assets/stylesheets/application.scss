@@ -24,11 +24,13 @@
 
 
 
-$primary-color: #734c99;
-$secondary-color:#489a15;
+$primary-color: #60a536;
+$secondary-color:#2cadcb;
 $dark-grey: #444;
 $light-grey: #8f8f8f;
 
+$break-medium: 1024px;
+$break-small: 640px;
 
 html, body { 
 height:100%;
@@ -139,15 +141,30 @@ footer {
 }
 
 #title-banner {
+	position: relative;
+	height: 250px;
+	overflow: hidden;
 	display:flex;
 	justify-content:center;
-	background-color: fade-out($primary-color, 0.8);
-	img {
-		height: 250px;
-		max-width: none;
-	}
+	background: image-url('MountainBanner.jpg');
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y:-15%;
 }
 
+#banner-logo {
+	position: absolute;
+	width: 100%;
+	display:flex;
+	justify-content:center;
+	background: fade-out($dark-grey, 0.3);
+}
+
+#main-logo {
+	height: 250px;
+	max-width: none;
+	filter: invert(100%);
+}
 
 .title-bar {
 	background-color: $primary-color;
@@ -203,17 +220,29 @@ section.top-bar-section {
 .banner-block {
 	display:flex;
 	height:500px;
+	@media screen and (max-width: $break-small) {
+		flex-direction: column;
+		height: 1200px;
+	}
 }
 
 
 .banner-col-60 {
 	@include banner-col;
 	width: 60%;
+	@media screen and (max-width: $break-small) {
+		width:100%;
+		height: 400px;
+	}
 }
 
 .banner-col-40 {
 	@include banner-col;
 	width:40%;
+	@media screen and (max-width: $break-small) {
+		width:100%;
+		height: 800px
+	}
 }
 
 .banner-split-50 {
@@ -290,13 +319,13 @@ section.top-bar-section {
 	border-radius: 50%;
 }
 
-.preview-row {
-	height: 200px
-}
-
 .preview-img {
 	max-height: 100%;
 	width: auto;
+	@media screen and (max-width: $break-medium) {
+		width: 100%;
+		max-height:none;
+	}
 	&.wide {
 		width: 100%;
 		max-height:none;
@@ -450,3 +479,10 @@ section.top-bar-section {
 	margin:auto;
 	background-color: $primary-color;
 } 
+
+.med-gutters {
+	@media screen and (max-width: $break-medium) {
+		padding-right: 20px;
+		padding-left:20px;
+	}
+}

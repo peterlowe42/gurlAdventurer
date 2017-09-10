@@ -26,8 +26,10 @@
     </nav>
     
     </nav>
-    <div id='title-banner'>
-      <%=image_tag 'GALogoLarge' %>
+    <div id='title-banner' data-stellar-background-ratio="2">
+      <div id='banner-logo'>        
+        <%=image_tag 'GALogoLarge', id: 'main-logo' %>
+      </div>
     </div>
 
     <%= render "layouts/navigation"%>
