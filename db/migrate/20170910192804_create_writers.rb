@@ -1,9 +1,10 @@
 class CreateWriters < ActiveRecord::Migration
   def change
     create_table :writers do |t|
-      t.string :firstname
-      t.string :lastname
-      t.string :middlename
+      t.string :first_name
+      t.string :last_name
+      t.string :middle_initial
+      t.string :fullname
       t.text :bio
 
       t.timestamps null: false

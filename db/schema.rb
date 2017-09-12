@@ -128,9 +128,10 @@ ActiveRecord::Schema.define(version: 20170910194359) do
   add_index "views", ["viewable_type", "viewable_id"], name: "index_views_on_viewable_type_and_viewable_id"
 
   create_table "writers", force: :cascade do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "middlename"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "middle_initial"
+    t.string   "fullname"
     t.text     "bio"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false

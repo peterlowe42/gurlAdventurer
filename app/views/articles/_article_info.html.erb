@@ -1,7 +1,8 @@
 <div class="article-info">
 	<div>  
 		<span class="">By </span>
-		<span class="author-name"><%= article.author %></span>
+		<span class="author-name">
+		<%= link_to article.writer.fullname, writers_path(id: article.writer.id) %></span>
 		<span class="article-date">
 			- <%= article.created_at.strftime("%a, %d %b %Y") %>
 		</span>

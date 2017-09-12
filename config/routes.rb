@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   get "/pages/:page" => "pages#show", as: 'page_show'
 
+  get "writers/:id" => 'writers#show', as: 'writers'
   
   devise_for :users, :controllers => { registrations: 'registrations' }
   # Example resource route with options:

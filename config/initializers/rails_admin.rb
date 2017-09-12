@@ -10,28 +10,21 @@ RailsAdmin.config do |config|
     end
   end
 
-
-  ### Popular gems integration
   config.model Article do
-    list do 
-      field :title
-      field :body
-      field :writer do 
-        searchable :firstname
-        pretty_value do
-          value.try(:firstname)
-        end
-      end
-    end
-    # configure :body do
-    #   html_attributes rows: 50, cols: 70
-    # end
+    exclude_fields :views, :comments, :popularity, :last_decay
+
+    field :writer, :belongs_to_association
 
     edit do
       fields_of_type :tag_list do
         partial 'tag_list_with_suggestions'        
       end
     end
+  end
+
+  config.model Writer do
+    exclude_fields :fullname
+    object_label_method :fullname
   end
 
 
@@ -55,20 +48,4 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
-
-  config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
-    new
-    export
-    bulk_delete
-    show
-    edit
-    delete
-    show_in_app
-
-    ## With an audit adapter, you can add:
-    # history_index
-    # history_show
-  end
 end

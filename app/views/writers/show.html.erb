@@ -1,0 +1,20 @@
+<div class='writer-bio row'>
+<h3><%= @writer.fullname %></h3>
+ <div class='large-4 columns'>
+   <%= image_tag @writer.avatar.url(:medium), class: 'preview-img wide'%> 
+ </div>	
+ <div class='large-8 columns'>
+ 		<p><%=@writer.bio %></p>
+ </div>
+
+</div>	
+
+ <div class='row'>
+	 <div class="header-divider">
+	 	<span>Articles</span>
+	 </div>
+	   <% @writer.articles.each do |article| %>
+		   <%=render partial: 'articles/preview_link', locals: { article: article } %>
+		 <%end%>
+ </div>	
+  

@@ -12,6 +12,6 @@ class Article < ActiveRecord::Base
 	
 	validates :title, presence: true, uniqueness: true
 	validates :body, presence: true 
-	validates :author, presence: true
 	validates :category_id, presence: true
+	validates :writer_id, presence: true
 end
