@@ -343,7 +343,6 @@ section.top-bar-section {
 }
 
 .preview-text {
-	max-height: 195px;
 	color:$dark-grey;
 }
 
@@ -487,4 +486,15 @@ section.top-bar-section {
 		padding-right: 20px;
 		padding-left:20px;
 	}
+}
+
+.avatar-img {
+	border-radius: 50%; 
+	width: 100%;
+}
+
+.writer-bio {
+	margin-bottom:30px;
+	padding-top: 30px;
+	
 }
