@@ -24,9 +24,15 @@ $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
 
-
-  $(".preview-text").dotdotdot({
-  });
+  if($(".preview-row")[0]){ //check if preview row exists
+    var imgHeight = $(".preview-row").find(".preview-img:first").height();// find height of first (they will all be same height) preview img
+    console.log("imgHeight: " + imgHeight)
+    $(".preview-text").height(imgHeight, function() {
+      console.log('hightsSet');
+    });
+    $(".preview-text").dotdotdot({
+    });
+  };
 
   $(".side-title").dotdotdot({});
 
@@ -34,13 +40,7 @@ $(document).ready(function(){
     console.log('Close Clicked')
     $(this).parent().fadeOut();
   })
-  
-  // $('.banner-img').each(function(){
-  //   var height = $(this).height();
-  //   var parentHeight = $(this).parents("div:first").height();
-  //   var diff = height - parentHeight;
-  //   $(this).css('margin-top', -diff/4); 
-  // })
+
     var $window = $(window);
     if ($('#sticky-top').length) {
 
