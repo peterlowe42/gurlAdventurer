@@ -1,14 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
   
   def create
-  	p "********************************************************************************"
-  	p sign_up_params
   	user = User.new(sign_up_params)
-  	p user
   	if user.save
   		redirect_to root_path
   	else
-  		p "NOT SAVED"
   		redirect_to root_path
   	end
   end
